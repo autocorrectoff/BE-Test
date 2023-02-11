@@ -38,3 +38,16 @@ func TestEngine_ShowReturnHtmlTableForCsvInput(t *testing.T) {
 		t.Error("Expected nil got error")
 	}
 }
+
+func TestEngine_ShowReturnHtmlTableForPrnInput(t *testing.T) {
+	inputFile := "test.prn"
+	expectedhtml := "<table><thead><tr><th>Name</th><th>Address</th><th>Postcode</th><th>Phone</th><th>Credit Limit</th><th>Birthday</th></thead><tbody><tr><td>Johnson, John</td><td>Voorstraat 32</td><td>3122gg</td><td>020 3849381</td><td>1000000</td><td>19870101</td></tr><tr><td>Anderson, Paul</td><td>Dorpsplein 3A</td><td>4532 AA</td><td>030 3458986</td><td>10909300</td><td>19651203</td></tr><tr><td>Wicket, Steve</td><td>Mendelssohnstraat 54d</td><td> 3423 ba</td><td>0313-398475</td><td>93400</td><td>19640603</td></tr><tr><td>Benetar, Pat</td><td>Driehoog 3zwart</td><td>2340 CC</td><td>06-28938945</td><td>54</td><td>19640904</td></tr><tr><td>Gibson, Mal</td><td>Vredenburg 21</td><td>3209 DD</td><td>06-48958986</td><td>5450</td><td>19781109</td></tr><tr><td>Friendly, User</td><td>Sint Jansstraat 32</td><td>4220 EE</td><td>0885-291029</td><td>6360</td><td>19800810</td></tr><tr><td>Smith, John</td><td>Børkestraße 32</td><td>87823</td><td>+44 728 889838</td><td>989830</td><td>19990920</td></tr></tbody></table>"
+	res, err := Process(inputFile)
+
+	if res != expectedhtml {
+		t.Error("Results don't match")
+	}
+	if err != nil {
+		t.Error("Expected nil got error")
+	}
+}
