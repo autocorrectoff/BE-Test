@@ -40,3 +40,8 @@ go run main.go -input-file Workbook2.csv -output-file output-csv.html
 ```
 go run main.go -input-file Workbook2.prn -output-file output-prn.html
 ```
+
+Running tests:
+```
+go test -v ./...
+```
