@@ -28,3 +28,15 @@ Good Luck!
 
 
 Copyright (C) 2001 - 2022 by Marktplaats BV an Adevinta company. All rights reserved.
+
+---
+
+
+Supply input file you wish to process and name for the file where you wish to output. Examples:
+```
+go run main.go -input-file Workbook2.csv -output-file output-csv.html
+```
+
+```
+go run main.go -input-file Workbook2.prn -output-file output-prn.html
+```
