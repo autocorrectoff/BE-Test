@@ -60,6 +60,13 @@ func processPrn(inputFile string) (string, error) {
 	return createHtmlTable(headerSlice, contentSlice), nil
 }
 
+/**
+*	1. Replace all consecutive whitespaces with delimiter
+*	2. Replace last whitespace in the string with delimiter
+*	3. Check if split line parts are equal to the number of headers
+*	4. If not, check if there's more than one part containing numerics
+*	5. If yes, then it's probably address and postcode. Insert delimiter between tokens containing numerics
+**/
 func parsePrnContent(content []string, columnCount int, delimiter string) [][]string {
 	var lines [][]string
 	var separatedData []string
