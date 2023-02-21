@@ -1,0 +1,43 @@
+HASH TABLES:
+key value lookups
+hash function hashes key into some kind of integer and maps integer into index in the array
+hash collisions -> when different keys result into the same hashcode
+there are multiple way of resolving collisions, one of the most common is chaining. 
+chaining -> each index stores a linked list of items with their keys
+open-addressing -> uses probing to find available index
+O(1) - constant, O(n) - linear
+
+INTERNAL CLOUDS: VMWare, OpenStack, IBM
+
+INDEXES: index is a pointer to data in a table. use B+ tree structures - data gropued into nodes
+
+master-slave REPLICATION: can be sync and async. Scale write loads? Data sharding is splitting the dataset between different servers based on the hash key.
+one master node - one point of failure
+
+DEADLOCK describes a condition in which two or more threads are blocked (hung) forever because they are waiting for each other. Two or more threads form a circular chain in which each thread waits for a lock which is held by the next thread in the chain
+avoid deadlock in go: 
+Channel deadlock, Don’t send and receive to the same channel in the same goroutine
+Read lock, Don’t take a read lock twice in the same goroutine
+Release the lock as soon as possible
+
+ELASTICSEARCH: analitics and full-text search engine
+apache lucene is search engine software library
+
+Link layer -> Internet layer -> Transport layer -> Application layer
+
+Transport Layer Security (TLS) is the successor protocol to SSL. TLS is an improved version of SSL
+
+BGP (Border Gateway Protocol) - routing protocol between nodes and networks
+
+DNS (Domain Name System) is domain names to ip addresses lookup. searches in resolver server then root server (root server points resolver server to top level domain server which in turn points to authoritative name server)
+
+DOUBLE WRITE PROBLEM - event driven systems problem where data is changed in two places(solved with outbox pattern)
+
+CAP theorem: Consistency(request will receive most recent write), Availability(every req will receive response with recent write), Partition tolerance
+
+VPC:
+Subnets allow you to partition your VPC by availability zones (public and private subnets)
+Route tables define access from internet to subnets
+Internet Gateway connects VPC to internet for public subnets (public subnet has route to internet gateway)
+NAT Gateway - a way for private subnet to connect to internet
+Subnets have NACLs attached
